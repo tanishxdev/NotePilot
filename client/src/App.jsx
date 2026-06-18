@@ -1,8 +1,10 @@
 import './App.css';
 
-import {Home} from './pages/Home.jsx';
-import {Auth} from './pages/Auth.jsx';
 import { Route, Routes } from 'react-router-dom';
+import { Home } from './pages/Home.jsx';
+import { Auth } from './pages/Auth.jsx';
+export const serverUrl = "http://localhost:5000";
+
 function App() {
   return (
     <>

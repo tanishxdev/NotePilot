@@ -1,7 +1,34 @@
 import { motion } from 'motion/react';
 import { FcGoogle } from 'react-icons/fc';
+import { signInWithPopup } from 'firebase/auth';
+import { auth, provider } from '../utils/firebase.js';
+import axios from 'axios';
+import { serverUrl } from '../App';
 
 export const Auth = () => {
+  const handleGoogleAuth = async () => {
+    try {
+      const response = await signInWithPopup(auth, provider);
+
+      const User = response.user;
+      const name = User.displayName;
+      const email = User.email;
+      const profilePic = User.photoURL;
+      const result = await axios.post(
+        serverUrl + '/api/auth/google',
+        { name, email },
+        {
+          withCredentials: true,
+        }
+      );
+
+      console.log('User Info:', { name, email, profilePic });
+      console.log(result.data);
+      
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div className="min-h-screen overflow-hidden bg-[#08090d] text-white relative">
       {/* Background Glow */}
@@ -53,6 +80,7 @@ export const Auth = () => {
             </p>
 
             <motion.button
+              onClick={handleGoogleAuth}
               whileHover={{ y: -2, scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
               className="
