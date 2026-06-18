@@ -1,9 +1,11 @@
 import express from 'express';
 import 'dotenv/config';
-import connectDB from './utils/connectDB.js';
-import authRouter from './routes/auth.route.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+
+import connectDB from './utils/connectDB.js';
+import authRouter from './routes/auth.route.js';
+import userRouter from './routes/user.route.js';
 
 const app = express();
 app.use(
@@ -22,8 +24,8 @@ app.get('/', (req, res) => {
 });
 
 // Mount the authRouter to handle authentication-related routes
-app.use('/api/auth', authRouter);
-
+app.use('/api/auth', authRouter); // Add this line to mount the auth routes
+app.use('/api/user', userRouter); // Add this line to mount the user routes as well
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, async () => {
