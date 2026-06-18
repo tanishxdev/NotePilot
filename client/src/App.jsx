@@ -1,13 +1,15 @@
 import './App.css';
 
+import {Home} from './pages/Home.jsx';
+import {Auth} from './pages/Auth.jsx';
+import { Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <>
-      <div className="flex items-center justify-center h-screen bg-gray-900">
-        <h1 className="bg-blue-500 text-white font-bold py-2 px-4 rounded">
-          Welcome to NotePilot!
-        </h1>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<Auth />} />
+      </Routes>
     </>
   );
 }
