@@ -1,8 +1,11 @@
 import { motion } from 'motion/react';
 import { Navbar } from '../components/Navbar.jsx';
 import { Footer } from '../components/Footer.jsx';
+import { useNavigate } from 'react-router-dom';
 
 export const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-[#08090d] overflow-hidden text-white relative">
       {/* background */}
@@ -38,6 +41,7 @@ export const Home = () => {
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.97 }}
               className="px-7 py-4 rounded-2xl bg-white text-black font-semibold"
+              onClick={() => navigate('/notes')}
             >
               Start Writing
             </motion.button>
