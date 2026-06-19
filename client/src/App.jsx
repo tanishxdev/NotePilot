@@ -9,6 +9,8 @@ import { Notes } from './pages/Notes.jsx';
 import { useEffect } from 'react';
 import { getCurrentUser } from './services/api.js';
 import { useDispatch, useSelector } from 'react-redux';
+import { PaymentSuccess } from './pages/PaymentSuccess';
+import { PaymentFailed } from './pages/PaymentFailed';
 
 export const serverUrl = 'http://localhost:5000';
 
@@ -35,6 +37,8 @@ function App() {
         <Route path="/notes" element={<Notes />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/history" element={<History />} />
+        <Route path="/payment-success" element={<PaymentSuccess />} />
+        <Route path="/payment-failed" element={<PaymentFailed />} />
       </Routes>
     </>
   );
