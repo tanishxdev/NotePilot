@@ -6,6 +6,7 @@ import cors from 'cors';
 import connectDB from './utils/connectDB.js';
 import authRouter from './routes/auth.route.js';
 import userRouter from './routes/user.route.js';
+import notesRouter from './routes/genrate.route.js';
 
 const app = express();
 app.use(
@@ -26,6 +27,7 @@ app.get('/', (req, res) => {
 // Mount the authRouter to handle authentication-related routes
 app.use('/api/auth', authRouter); // Add this line to mount the auth routes
 app.use('/api/user', userRouter); // Add this line to mount the user routes as well
+app.use('/api/notes', notesRouter); // Add this line to mount the notes routes as well
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, async () => {
