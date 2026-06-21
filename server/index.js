@@ -14,7 +14,8 @@ import { stripeWebhook } from './controllers/credits.controller.js';
 const app = express();
 app.use(
   cors({
-    origin: 'https://notepilotislivenow.vercel.app', // Replace with your frontend URL
+    origin: '', // Replace with your frontend URL
+    origin: process.env.CLIENT_URL,
     credentials: true, // Allow cookies to be sent with requests
   })
 );
@@ -34,7 +35,11 @@ app.use('/api/credit', creditRouter); // Add this line to mount the credits rout
 app.use('/api/pdf', pdfRouter); // Add this line to mount the PDF routes as well
 
 // Stripe webhook endpoint
-app.post('/api/stripe/webhook', express.raw({ type: 'application/json' }), stripeWebhook);
+app.post(
+  '/api/stripe/webhook',
+  express.raw({ type: 'application/json' }),
+  stripeWebhook
+);
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, async () => {
