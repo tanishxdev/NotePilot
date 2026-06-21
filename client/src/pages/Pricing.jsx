@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { serverUrl } from '../App';
+import { serverUrl } from "../config";
 
 export const Pricing = () => {
   const navigate = useNavigate();

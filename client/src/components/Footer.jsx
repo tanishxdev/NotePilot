@@ -4,7 +4,7 @@ import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { serverUrl } from "../App";
+import { serverUrl } from "../config";
 import { setUserData } from "../redux/userSlice";
 
 export const  Footer = () => {

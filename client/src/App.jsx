@@ -12,8 +12,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { PaymentSuccess } from './pages/PaymentSuccess';
 import { PaymentFailed } from './pages/PaymentFailed';
 
-export const serverUrl = 'http://localhost:5000';
-
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {

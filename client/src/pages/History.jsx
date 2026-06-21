@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { serverUrl } from '../App';
+import { serverUrl } from "../config";
 import {FinalResult} from '../components/FinalResult';
 
 export const History = () => {
