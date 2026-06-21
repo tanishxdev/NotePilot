@@ -15,9 +15,10 @@ export const googleAuth = async (req, res) => {
     let token = await getToken(user._id);
     res.cookie('token', token, {
       httpOnly: true,
-      secure: false,
+      secure: true,
       sameSite: 'none',
       maxAge: 7 * 24 * 60 * 60 * 1000,
+      path: '/',
     });
     return res.status(200).json(user);
   } catch (error) {
@@ -31,6 +32,7 @@ export const logOut = async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: 'none',
+      path: '/',
     });
     return res.status(200).json({ message: 'LogOut Successfully' });
   } catch (error) {
