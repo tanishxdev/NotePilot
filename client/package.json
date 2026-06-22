@@ -12,6 +12,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.12.0",
     "@tailwindcss/vite": "^4.3.1",
+    "@vercel/analytics": "^2.0.1",
     "axios": "^1.18.0",
     "axois": "^0.0.1-security",
     "firebase": "^12.15.0",
