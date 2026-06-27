@@ -3,8 +3,6 @@
 
 An AI-powered study platform that transforms how students learn by generating structured notes, quizzes, flashcards, diagrams, and mind maps from any study material in seconds.
 
-![NotePilot Logo](./client/public/logo.png)
-
 ## 🌟 Live Demo
 
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://notepilotislivenow.vercel.app/)
